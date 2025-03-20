@@ -1,0 +1,30 @@
+<html>
+  <%- include('./partials/head.ejs') %>
+  <body>
+    <%- include('./partials/nav.ejs') %>
+    <div class="department-details">
+      <h3>Department</h3>
+      <h1><%= department.department %></h1>
+      <div class="content">
+        <p>Members in this department</p>
+        
+      
+
+        <div class="operation-btn">
+          <br />
+          <form action="/departments/<%= department.department %>" method="post">
+            <button type="submit" class="button button1">Remove</button>
+          </form>
+          <form
+            action="/edit/<%= department.department %>/<%= action %>"
+            method="POST"
+          >
+          <button type="submit" class="button button1">Update</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <%- include('./partials/footer.ejs') %>
+  </body>
+</html>
